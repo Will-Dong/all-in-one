@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web3 Arbitrage Monitor</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="mark">AM</span>
+        <div>
+          <strong>Arb Monitor</strong>
+          <small>paper-mode strategy console</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#overview" class="active">Overview</a>
+        <a href="#opportunities">Opportunities</a>
+        <a href="#bots">Bots</a>
+        <a href="#trades">Paper Trades</a>
+        <a href="#logs">Logs</a>
+      </nav>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h1>Web3 Long-tail Arbitrage Console</h1>
+          <p>RWA, Pendle, perp funding, stablecoin basis, and prediction market scans.</p>
+        </div>
+        <div class="actions">
+          <button id="scanBtn">Scan Now</button>
+          <button id="refreshBtn" class="secondary">Refresh</button>
+        </div>
+      </header>
+
+      <section id="overview" class="metrics"></section>
+
+      <section id="opportunities" class="panel">
+        <div class="panel-heading">
+          <h2>Current Opportunities</h2>
+          <span id="snapshotTime"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kind</th>
+                <th>Opportunity</th>
+                <th>Edge</th>
+                <th>APR</th>
+                <th>Capacity</th>
+                <th>Risk</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="opportunityRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="bots" class="panel">
+        <div class="panel-heading">
+          <h2>Bots</h2>
+          <span>Live execution is disabled in MVP</span>
+        </div>
+        <div id="botGrid" class="bot-grid"></div>
+      </section>
+
+      <section id="trades" class="panel">
+        <div class="panel-heading">
+          <h2>Paper Trades</h2>
+          <span>Simulated fills from running bots</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Bot</th>
+                <th>Kind</th>
+                <th>Notional</th>
+                <th>Edge</th>
+                <th>Status</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="tradeRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="logs" class="panel">
+        <div class="panel-heading">
+          <h2>Logs</h2>
+          <span>Bot and system events</span>
+        </div>
+        <div id="logList" class="log-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
